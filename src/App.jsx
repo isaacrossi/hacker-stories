@@ -32,9 +32,10 @@ const App = () => {
 };
 
 const Search = () => {
+  const [searchTerm, setSearchTerm] = React.useState("");
+
   const handleChange = (event) => {
-    console.log(event);
-    console.log(event.target.value);
+    setSearchTerm(event.target.value);
   };
 
   const handleBlur = (event) => {
@@ -50,6 +51,9 @@ const Search = () => {
         onChange={handleChange}
         onBlur={handleBlur}
       />
+      <p>
+        Searching for <strong>{searchTerm}</strong>
+      </p>
     </div>
   );
 };
